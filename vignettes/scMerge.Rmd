@@ -102,7 +102,8 @@ In this mESC data, we pooled data from 2 different batches from three different 
 ```{r checking raw data}
 scater::plotPCA(example_sce, 
                 colour_by = "cellTypes", 
-                shape_by = "batch")
+                shape_by = "batch",
+                add_ticks = FALSE)
 ```
 
 
@@ -136,7 +137,8 @@ We now colour construct the PCA plot again on our normalised data. We can observ
 scater::plotPCA(scMerge_unsupervised, 
                 colour_by = "cellTypes", 
                 shape_by = "batch",
-                run_args = list(exprs_values = "scMerge_unsupervised"))
+                run_args = list(exprs_values = "scMerge_unsupervised"),
+                add_ticks = FALSE)
 ```
 
 <!-- ##Selecting 80% of cells -->
@@ -170,7 +172,8 @@ scMerge_unsupervised_all <- scMerge(example_sce,
 scater::plotPCA(scMerge_unsupervised_all, 
                 colour_by = "cellTypes", 
                 shape_by = "batch",
-                run_args = list(exprs_values = "scMerge_unsupervised_all"))
+                run_args = list(exprs_values = "scMerge_unsupervised_all"),
+                add_ticks = FALSE)
 ```
 
 <!-- ##Selecting 20% of cells -->
@@ -206,7 +209,8 @@ scMerge_supervised <- scMerge(example_sce,
 scater::plotPCA(scMerge_supervised,
                 colour_by = "cellTypes",
                 shape_by = "batch",
-                run_args = list(exprs_values = "scMerge_supervised"))
+                run_args = list(exprs_values = "scMerge_supervised"),
+                add_ticks = FALSE)
 ```
 
 
@@ -229,7 +233,8 @@ scMerge_semisupervised1 <- scMerge(example_sce,
 scater::plotPCA(scMerge_semisupervised1, 
                 colour_by = "cellTypes", 
                 shape_by = "batch",
-                run_args = list(exprs_values = "scMerge_semisupervised1"))
+                run_args = list(exprs_values = "scMerge_semisupervised1"),
+                add_ticks = FALSE)
 ```
 
 # Semi-supervised scMerge II
@@ -255,7 +260,8 @@ scMerge_semisupervised2 <- scMerge(example_sce,
 scater::plotPCA(scMerge_semisupervised2, 
                 colour_by = "cellTypes", 
                 shape_by = "batch",
-                run_args = list(exprs_values = "scMerge_semisupervised2"))
+                run_args = list(exprs_values = "scMerge_semisupervised2"),
+                add_ticks = FALSE)
 ```
 
 
@@ -296,7 +302,8 @@ paste("Fast version of scMerge takes ", round(t4 - t3, 2), " seconds")
 scater::plotPCA(scMerge_fast, 
                 colour_by = "cellTypes", 
                 shape_by = "batch",
-                run_args = list(exprs_values = "scMerge_fast")) +
+                run_args = list(exprs_values = "scMerge_fast"),
+                add_ticks = FALSE) +
   labs(title = "fast_svd yields similar results to the default version")
 ```
 
